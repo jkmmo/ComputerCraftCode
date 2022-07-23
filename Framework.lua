@@ -5,6 +5,7 @@ for i,v in pairs(Libs) do
     print("Attempting to load"..v)
     local s,e = pcall(function ()
         local Request = http.get(BaseUrl..v)
+        print(BaseUrl..v)
         loadstring(Request.readAll())()
     end)
     if not s then
