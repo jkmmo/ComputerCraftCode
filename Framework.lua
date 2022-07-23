@@ -1,5 +1,5 @@
 local BaseUrl = "https://raw.githubusercontent.com/jkmmo/ComputerCraftCode/main/"
-local Libs = {"Test.lua"}
+local Libs = {"Test.lua","Test2.lua"}
 print(Libs)
 for i,v in pairs(Libs) do
     local Request = http.get(BaseUrl..v)

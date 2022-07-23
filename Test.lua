@@ -1,1 +1,3 @@
-print("123")
+while true do
+    print("Running")
+end
