@@ -3,6 +3,7 @@ local nbt = peripheral.find("nbtStorage") or error("No nbt")
 local Chatbox = peripheral.find("chatBox") or error("No Fucking chat")
 local Name = "Dobby"
 local God = "Leet33"
+
 function UpdateB()
     for i,v in pairs(nbt.read()) do
         modem.transmit(43,43,v.player..":"..v.date)
@@ -22,8 +23,8 @@ function Prompt()
         else
             return message
         end
-    end    
-    
+    end
+
 end
 
 
@@ -32,6 +33,7 @@ cmd["cmd/log"] = function()
     UpdateB()
     Chat("Done, Can dobby have some food now master?")
 end
+
 cmd["cmd/ltc"] = function() 
     local s = ""
     for i,v in pairs( nbt.read()) do
@@ -48,6 +50,7 @@ cmd["cmd/name"] = function()
        Chat("Dobby loves his new nickname!")
    end
 end
+
 cmd["cmd/clearm"] = function()
     modem.transmit(45,43," ")
     Chat("Dobby has made the screen clear. Is master Pround")
@@ -77,6 +80,6 @@ while  true do
            cmd[Message]()
            else
            Chat("You'r not dobby's master!")
-        end   
+        end
     end
 end
