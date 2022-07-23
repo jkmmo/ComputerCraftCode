@@ -1,6 +1,6 @@
-local detector = peripheral.find("playerDetector")
-local integrator = peripheral.find("redstoneIntegrator")
-local nbt = peripheral.find("nbtStorage")
+local detector = peripheral.find("playerDetector") or error("No playerDetector")
+local integrator = peripheral.find("redstoneIntegrator") or error("No redstoneIntegrator")
+local nbt = peripheral.find("nbtStorage") or error("No fucking nbtStorage")
 
 
 while true do
