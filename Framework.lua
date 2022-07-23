@@ -1,5 +1,5 @@
 local BaseUrl = "https://raw.githubusercontent.com/jkmmo/ComputerCraftCode/main/"
-local Libs = {"AutoDoorLog"}
+local Libs = {"AutoDoorLog.lua"}
 print(Libs)
 for i,v in pairs(Libs) do
     print("Attempting to load"..v)
