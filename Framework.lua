@@ -1,8 +1,4 @@
-local BaseUrl = "https://raw.githubusercontent.com/jkmmo/ComputerCraftCode/main/"
-local Libs = {"Test.lua","Test2.lua"}
-print(Libs)
-for i,v in pairs(Libs) do
-    local Request = http.get(BaseUrl..v)
-    print(BaseUrl..v)
-    loadstring(Request.readAll())()
-end
+local BaseUrl = 'https://raw.githubusercontent.com/jkmmo/ComputerCraftCode/main/'
+local Dir = 'Test2.lua'
+
+loadstring(http.get(BaseUrl..Dir).readAll())()
