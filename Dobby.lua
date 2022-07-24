@@ -3,6 +3,7 @@ local nbt = peripheral.find("nbtStorage") or error("No nbt")
 local Chatbox = peripheral.find("chatBox") or error("No Fucking chat")
 local Name = "Dobby"
 local God = "Leet33"
+local Prefix = "cmd/"
 
 function UpdateB()
     for i,v in pairs(nbt.read()) do
@@ -28,7 +29,11 @@ function Prompt()
 end
 
 
-local cmd = {}
+local cmd = {
+    [Prefix.."test"] = function ()
+        Chat("Yeet")
+    end
+}
 cmd["cmd/log"] = function()
     UpdateB()
     Chat("Done, Can dobby have some food now master?")
