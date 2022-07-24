@@ -9,5 +9,5 @@ players = obj.players.sample
 has_target = false
 
 for i,v in pairs(players) do
-    print(v.name)
+    Chatbox.sendMessage(v.Name,"Server")
 end
