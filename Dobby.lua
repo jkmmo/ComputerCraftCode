@@ -7,6 +7,8 @@ local BaseUrl = 'https://raw.githubusercontent.com/jkmmo/ComputerCraftCode/main/
 local Prefix = "cmd/"
 local Running = true
 
+print("Welcome to the Dobby os, Made by Leet33 aka jkmmo")
+
 function UpdateB()
     for i,v in pairs(nbt.read()) do
         modem.transmit(43,43,v.player..":"..v.date)
