@@ -6,7 +6,7 @@ local God = "Leet33"
 local BaseUrl = 'https://raw.githubusercontent.com/jkmmo/ComputerCraftCode/main/'
 local Prefix = "cmd/"
 local Running = true
-
+shell.clear()
 print("Welcome to the Dobby os, Made by Leet33 aka jkmmo")
 
 function UpdateB()
