@@ -70,7 +70,11 @@ local cmd = {
         Chat("What script would you like to run?")
         local Responce = Prompt()
         if Responce then
-            loadstring(http.get(BaseUrl..Responce).readAll())()
+            local Check = http.get(BaseUrl..Responce).readAll()
+            if Check then
+                print(Check)
+                loadstring(Check)()
+            end
         end
     end
 }
