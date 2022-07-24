@@ -8,6 +8,6 @@ obj = textutils.unserialiseJSON(str)
 players = obj.players.sample
 has_target = false
 
-for i=1, #players do
-    Chatbox.sendMessage(players[i]["name"],"Server")
+for i,v in pairs(players) do
+    print(v.name)
 end
