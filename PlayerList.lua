@@ -1,5 +1,5 @@
 local Chatbox = peripheral.find("chatBox")
-os.loadAPI("json")
+require("json")
 
 ip="147.135.44.154"
 
