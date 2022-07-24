@@ -39,7 +39,7 @@ end
 local cmd = {
     [Prefix..'test'] = function ()
        coroutine.resume(coroutine.create(function ()
-            Chatbox("Fuck you Marten!")
+            Chat("Fuck you Marten!")
        end))
     end,
 
