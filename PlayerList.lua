@@ -1,10 +1,10 @@
 local Chatbox = peripheral.find("chatBox")
-require("json")
+
 
 ip="147.135.44.154"
 
 str = http.get("https://mcapi.us/server/status?ip="..ip).readAll()
-obj = json.decode(str)
+obj = textutils.unserialiseJSON(str)
 players = obj.players.sample
 has_target = false
 
