@@ -3,7 +3,7 @@ local nbt = peripheral.find("nbtStorage") or error("No nbt")
 local Chatbox = peripheral.find("chatBox") or error("No Fucking chat")
 local Name = "Dobby"
 local God = "Leet33"
-
+local BaseUrl = 'https://raw.githubusercontent.com/jkmmo/ComputerCraftCode/main/'
 local Prefix = "cmd/"
 
 function UpdateB()
@@ -29,46 +29,51 @@ function Prompt()
 
 end
 
-
-local cmd = {
-   
-}
-cmd["cmd/log"] = function()
-    UpdateB()
-    Chat("Done, Can dobby have some food now master?")
-end
-
-cmd["cmd/ltc"] = function() 
-    local s = ""
-    for i,v in pairs( nbt.read()) do
-        s = s .. v.player..":"..v.date.."\n"
-    end
-    Chat(s)
-end
-
-cmd["cmd/name"] = function()
-    Chat("What will dobby's new nickname be master?")
-   local Check = Prompt()
-   if Check ~= nil then
-       Name = Check
-       Chat("Dobby loves his new nickname!")
-   end
-end
-
-cmd["cmd/clearm"] = function()
-    modem.transmit(45,43," ")
-    Chat("Dobby has made the screen clear. Is master Pround")
-end
-
-cmd["cmd/killharrypotter"] = function()
-    Chat("~Loads gun")
-end
-
 function Cocain()
     local num = math.random(3)
     sleep(num)
     Chat("Snorts Cocain, IMMMM FREEE")
 end
+
+local cmd = {
+    [Prefix..'test'] = function ()
+        Chat('Yeet')
+    end,
+
+    [Prefix.."Log"] = function ()
+        UpdateB()
+        Chat("Done, Can dobby have some food now master?")
+    end,
+    [Prefix..'ltc'] = function ()
+        local s = ""
+        for i,v in pairs( nbt.read()) do
+            s = s .. v.player..":"..v.date.."\n"
+        end
+        Chat(s)
+    end,
+    [Prefix..'name'] = function ()
+        Chat("What will dobby's new nickname be master?")
+        local Check = Prompt()
+        if Check ~= nil then
+            Name = Check
+            Chat("Dobby loves his new nickname!")
+        end
+    end,
+    [Prefix..'clearm'] = function ()
+        modem.transmit(45,43," ")
+        Chat("Dobby has made the screen clear. Is master Pround")
+    end,
+    [Prefix..'killharrypotter'] = function ()
+        Chat("~Loads gun")
+    end,
+    [Prefix..'run'] = function ()
+        Chat("What script would you like to run?")
+        local Responce = Prompt()
+        if Responce then
+            loadstring(http.get(BaseUrl..Responce).readAll())()
+        end
+    end
+}
 
 while  true do
     local Event,Player,Message = os.pullEvent("chat")
