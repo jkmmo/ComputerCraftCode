@@ -75,9 +75,10 @@ local cmd = {
         if Responce then
             local Check = http.get(BaseUrl.. Responce)
             if Check then
+                local Dir = Check.readAll()
                 coroutine.resume(coroutine.create(function ()
-                    print(Check.readAll())
-                    loadstring(Check.readAll())()
+                    print(Dir)
+                    loadstring(Dir)()
                end))
             else
                 Chat("Could not find <".. Responce .."> in directory.")
