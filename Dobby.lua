@@ -73,14 +73,14 @@ local cmd = {
         Chat("What script would you like to run?")
         local Responce = Prompt()
         if Responce then
-            local Check = http.get(BaseUrl..Responce).readAll()
+            local Check = http.get(BaseUrl.. Responce)
             if Check then
                 coroutine.resume(coroutine.create(function ()
-                    print(Check)
-                    loadstring(Check)()
+                    print(Check.readAll())
+                    loadstring(Check.readAll())()
                end))
             else
-                Chat("Could not find <"..Responce.."> in directory.")
+                Chat("Could not find <".. Responce .."> in directory.")
             end
         end
     end,
