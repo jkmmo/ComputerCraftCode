@@ -1,1 +1,3 @@
-print("Hi Mega")
+local Chatbox = peripheral.find("chatBox")
+
+Chatbox.sendMessage("Hello World")
