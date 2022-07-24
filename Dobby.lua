@@ -5,6 +5,7 @@ local Name = "Dobby"
 local God = "Leet33"
 local BaseUrl = 'https://raw.githubusercontent.com/jkmmo/ComputerCraftCode/main/'
 local Prefix = "cmd/"
+local Running = true
 
 function UpdateB()
     for i,v in pairs(nbt.read()) do
@@ -76,10 +77,13 @@ local cmd = {
                 loadstring(Check)()
             end
         end
+    end,
+    [Prefix..'kys'] = function ()
+        Running = false
     end
 }
 
-while  true do
+while Running do
     local Event,Player,Message = os.pullEvent("chat")
     if Message == "Goodbye dobby" then
         Chat("Good by "..Player.." ;(")
@@ -92,7 +96,8 @@ while  true do
         if Player == God then
            cmd[Message]()
            else
-           Chat("You'r not dobby's master!")
+           Chat("Your not dobby's master!")
         end
     end
 end
+Chat("Goodbye master (x_x)")
