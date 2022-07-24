@@ -38,9 +38,9 @@ end
 
 local cmd = {
     [Prefix..'test'] = function ()
-       coroutine.wrap(function()
-            Chat("Fuck you marten. ps sorry")
-       end)
+       coroutine.resume(coroutine.create(function ()
+            print("test")
+       end))
     end,
 
     [Prefix.."Log"] = function ()
