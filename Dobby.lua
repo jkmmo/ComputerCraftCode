@@ -3,6 +3,7 @@ local nbt = peripheral.find("nbtStorage") or error("No nbt")
 local Chatbox = peripheral.find("chatBox") or error("No Fucking chat")
 local Name = "Dobby"
 local God = "Leet33"
+
 local Prefix = "cmd/"
 
 function UpdateB()
@@ -30,9 +31,7 @@ end
 
 
 local cmd = {
-    [Prefix.."test"] = function ()
-        Chat("Yeet")
-    end
+   
 }
 cmd["cmd/log"] = function()
     UpdateB()
