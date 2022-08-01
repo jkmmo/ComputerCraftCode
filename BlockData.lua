@@ -7,6 +7,7 @@ for i,Side in pairs(peripheral.getNames()) do
         local  name = per
         local p = peripheral.find(per)
         local methods = peripheral.getMethods(per)
+        print(methods)
         local tab = {name = name, p = p , methods = methods}
         table.insert(Connected_peripherals,tab)
     end
