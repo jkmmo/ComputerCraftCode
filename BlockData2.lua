@@ -12,9 +12,10 @@ for i,Side in pairs(peripheral.getNames()) do
 end
 
 for i,pref in pairs(Connected_peripherals) do
-    local y = 1
+    local y = 2
     printer.newPage()
     printer.setPageTitle(pref.name)
+    printer.write(pref.name)
     for x,v in pairs(pref.p) do
         printer.write(x..", "..type(v))
         y = y + 1
