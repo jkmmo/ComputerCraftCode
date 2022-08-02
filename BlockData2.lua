@@ -16,6 +16,7 @@ for i,pref in pairs(Connected_peripherals) do
     printer.newPage()
     printer.setPageTitle(pref.name)
     printer.write(pref.name)
+    printer.setCursorPos(1,y)
     for x,v in pairs(pref.p) do
         printer.write(x..", "..type(v))
         y = y + 1
